@@ -1,7 +1,6 @@
 # Security and privacy audit: TankTrouble Skin Tools 1.0.0
 
-Date: 2026-10-14. Scope: the two release archives as distributed (`TankTrouble-Skin-Tools-1.0.0.zip` and
-`TankTrouble-Skin-Tools-1.0.0-extension.zip`), opened and read entry by entry, plus every file tracked by this repository
+Date: 2026-10-14. Scope: the release archive as distributed (`TankTrouble-Skin-Tools-1.0.0.zip`), opened and read entry by entry, plus every file tracked by this repository
 (what a public repository would show). Result: **no findings**.
 
 ## 1. How it was checked
@@ -15,7 +14,7 @@ Date: 2026-10-14. Scope: the two release archives as distributed (`TankTrouble-S
 | Session or cookie material, IP addresses | every text entry |
 | References to private development material (the private development repository, game research, private test setups, AI and automation modules, other private extensions) | every text entry |
 | Source maps and source-map comments | every text entry |
-| Personal identifiers from a local, gitignored list (`build/private-patterns.txt`: name, username, e-mail) | every text entry |
+| Personal identifiers from a local, gitignored list (`build/private-patterns.txt`: Windows user name, e-mail) | every text entry |
 | Links to any site other than tanktrouble.com, github.com, creativecommons.org and standard namespaces | every text entry |
 | Network or code-evaluation APIs (`fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource`, `sendBeacon`, `eval`, `new Function`, `importScripts`) | runtime JavaScript |
 | Extension APIs that need permissions (`chrome.runtime`, `storage`, `tabs`, `cookies`, …) | runtime JavaScript |
@@ -23,8 +22,8 @@ Date: 2026-10-14. Scope: the two release archives as distributed (`TankTrouble-S
 | PNG chunks other than IHDR, PLTE, tRNS, IDAT, IEND (text, time, EXIF, ICC metadata) | every PNG |
 | `skin.json` keys outside the documented schema | example skins |
 | Manifest: no `permissions`, `host_permissions`, `background`, `web_accessible_resources`, `externally_connectable`, `content_security_policy`, `update_url`, `key`; content scripts only on `https://tanktrouble.com/*`; Manifest V3 | `manifest.json` |
-| ZIP entries: no dotfiles, PSD, Blender, SVG, logs, OS metadata files; no extra fields or comments | both archives |
-| The archive equals the release folder byte for byte (read back after writing) | both archives |
+| ZIP entries: no dotfiles, PSD, Blender, SVG, logs, OS metadata files; no extra fields or comments | the archive |
+| The archive equals the release folder byte for byte (read back after writing) | the archive |
 
 **Release allowlist.** `build/release.config.json` names every file the release can contain and why. A missing source fails
 the build, and so does any file in the output that no rule produced. Nothing reaches the release just because it sits in a
@@ -61,7 +60,7 @@ extension content security policy.
   screen. It never sends input, never calls the game's networking, and never changes the game model, hitboxes or physics.
   No AI, bot or automation code is in this repository or the release.
 
-## 4. Independence from the development repository
+## 4. Independence from private development material
 
 This project builds and installs with only its own files and two pinned development tools (`esbuild`, `playwright-core`).
 The runtime source's comments and messages were rewritten to drop references to private tools before export. The audit
@@ -72,7 +71,7 @@ re-checks the archives and the tracked files for such references on every build.
 No third-party code ships. The example skins are original renders, plus one rendered from a CC0 model (see
 `THIRD-PARTY-NOTICES.md`). No TankTrouble program code or artwork is included. The release's PNGs are this project's art,
 and the guide's screenshots show only this project's panel, its skins and Chrome's extensions page.
-See `PUBLICATION-CHECKLIST.md` for the decisions that remain with the owner.
+The licence holder is Bleed (Dowells); permission for the third-party credits in `THIRD-PARTY-NOTICES.md` is handled by the owner.
 
 ## 6. Residual risks
 

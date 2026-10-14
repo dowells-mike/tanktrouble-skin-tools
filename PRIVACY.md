@@ -1,6 +1,6 @@
 # Privacy
 
-TankTrouble Skin Tools is a browser add-on that changes how tanks look on your own screen. It is built to keep
+TankTrouble Skin Tools (by Bleed) is a browser add-on that changes how tanks look on your own screen. It is built to keep
 everything on your computer.
 
 ## What it does not do

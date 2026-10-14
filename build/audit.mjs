@@ -79,10 +79,10 @@ function auditManifest(where, data) {
   return out;
 }
 
-/** Audits both archives entry by entry. Returns a list of findings (empty = clean). */
-export function auditRelease({ zipFile, extZipFile }) {
+/** Audits the release archive entry by entry. Returns a list of findings (empty = clean). */
+export function auditRelease({ zipFile }) {
   const findings = [];
-  for (const file of [zipFile, extZipFile]) {
+  for (const file of [zipFile]) {
     const name = path.basename(file);
     const entries = readZip(fs.readFileSync(file));
     for (const e of entries) {
@@ -116,9 +116,9 @@ export function auditRepository(root = projectRoot) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const dist = path.join(projectRoot, 'dist');
   const zips = fs.existsSync(dist) ? fs.readdirSync(dist).filter(n => n.endsWith('.zip')) : [];
-  const zipFile = zips.find(n => !n.endsWith('-extension.zip')), extZipFile = zips.find(n => n.endsWith('-extension.zip'));
+  const zipFile = zips[0];
   let findings = [];
-  if (zipFile && extZipFile) findings = auditRelease({ zipFile: path.join(dist, zipFile), extZipFile: path.join(dist, extZipFile) });
+  if (zipFile) findings = auditRelease({ zipFile: path.join(dist, zipFile) });
   else console.log('no release archives in dist/ (run npm run build first); auditing the repository only');
   let repo = [];
   try { repo = auditRepository(); } catch (e) { console.log(`repository audit skipped: ${e.message}`); }

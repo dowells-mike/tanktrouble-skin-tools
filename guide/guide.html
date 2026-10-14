@@ -24,6 +24,7 @@ main{max-width:880px;margin:0 auto;padding:18px}
 .btn:active{transform:translateY(2px);box-shadow:0 1px 4px rgba(0,0,0,.45)}
 .btn.glass{color:#222;background:linear-gradient(#fff,#e2e2e2);border:1px solid #8f8f8f;box-shadow:0 2px 3px rgba(0,0,0,.25)}
 h2.part{font:900 22px/1.2 "Arial Black",Arial,sans-serif;margin:26px 0 0}
+.gh{margin:10px 0;max-width:420px;border:1px solid #c9ced3;border-radius:6px;background:#fff;font:14px Arial,sans-serif}.gh>b{display:block;padding:8px 12px;border-bottom:1px solid #d9dde1;background:#f6f8fa;border-radius:6px 6px 0 0}.gh div{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-bottom:1px solid #eceff1}.gh div:last-child{border-bottom:0}.gh .hit{background:#e3e9f6;box-shadow:inset 3px 0 0 var(--blue1);font-weight:700}.gh .hit i{font:700 12px Arial;color:#0b3fd0}.gh .dim{color:#777}
 .card{margin:18px 0;padding:16px 18px;border-radius:6px;background:linear-gradient(var(--card1),var(--card2));box-shadow:0 8px 16px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.12)}
 .step{display:grid;grid-template-columns:52px 1fr;gap:4px 14px}
 .num{grid-row:span 2;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font:900 22px/1 "Arial Black",Arial,sans-serif;background:linear-gradient(var(--blue1),var(--blue2));box-shadow:0 3px 4px rgba(0,0,0,.4)}
@@ -49,71 +50,90 @@ footer{max-width:880px;margin:0 auto;padding:6px 18px 30px;color:var(--muted);fo
 <body>
 <header class="top"><div class="in">
 <svg viewBox="0 0 128 128" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a92ff"/><stop offset="1" stop-color="#0014ab"/></linearGradient><linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#f0a010"/></linearGradient></defs><rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bg)"/><g transform="rotate(-18 64 66)" stroke="#111" stroke-width="5" stroke-linejoin="round"><rect x="26" y="26" width="18" height="78" rx="6" fill="#2b2b2b"/><rect x="84" y="26" width="18" height="78" rx="6" fill="#2b2b2b"/><rect x="38" y="30" width="52" height="70" rx="10" fill="url(#hl)"/><rect x="57" y="10" width="14" height="44" rx="5" fill="url(#hl)"/><circle cx="64" cy="68" r="19" fill="#ffe680"/></g></svg>
-<div><h1>TankTrouble Skin Tools</h1><p>Install guide · version 1.0.0 · an unofficial fan-made add-on</p></div>
+<div><h1>TankTrouble Skin Tools</h1><p>Install guide · version {{version}} · an unofficial fan-made add-on by Bleed</p></div>
 </div></header>
 <main>
 
 <section class="card hero" aria-labelledby="hello">
 <div class="text">
 <h2 id="hello">Give your tank a new look</h2>
-<p>Skin Tools is a small add-on for <b>Google Chrome</b> (and Chrome-based browsers like Edge and Brave). It changes how tanks look <b>on your own screen</b>. Nobody else sees it, and the game plays exactly the same.</p>
+<p>Skin Tools is a small, free add-on for <b>Google Chrome</b> (and Chrome-based browsers like Edge and Brave). It changes how tanks <b>look</b>, <b>on your own screen only</b>. Nobody else sees it, and the game plays exactly the same. It has no automation and no cheats.</p>
 <a class="btn" href="#install">Install it</a><a class="btn glass" href="#use">How to use it</a>
 </div>
 <img src="{{img:preview.png}}" alt="The Skin Tools panel showing a large preview of the Golden Tank skin">
 </section>
 
-<h2 class="part" id="install">Install (about 2 minutes)</h2>
+<h2 class="part" id="install">Install (about 3 minutes)</h2>
 
 <section class="card step" aria-labelledby="s1">
 <div class="num" aria-hidden="true">1</div>
-<h3 id="s1">Unzip the download</h3>
+<h3 id="s1">Download it from GitHub</h3>
 <div>
-<p>Right-click <code>TankTrouble-Skin-Tools-1.0.0.zip</code> and choose <b>Extract All…</b>. You get a folder with:</p>
-<ul><li><code>extension</code>: the add-on itself</li><li><code>skin-packs</code>: three example skins (Golden Tank, Onyx Tank, 3D Shaders)</li><li>this guide</li></ul>
-<p class="tip">Keep the folder somewhere it will stay, like <b>Documents</b>. Chrome runs the add-on from this folder, so don't delete or move it.</p>
+<p>Open the project's <a href="{{repo}}/releases/latest">Releases page</a>. Under <b>Assets</b>, click <code>{{zip}}</code>. Your browser downloads it (about 800 KB).</p>
+<div class="gh" role="img" aria-label="Drawing of the Assets list on a GitHub release page with the ZIP file highlighted">
+<b>Assets</b>
+<div class="hit"><span>📦 {{zip}}</span><i>click this one</i></div>
+<div class="dim"><span>Source code (zip)</span></div>
+<div class="dim"><span>Source code (tar.gz)</span></div>
+</div>
+<p class="tip">You only need the first file, <b>{{zip}}</b>. The "Source code" files are for developers.</p>
 </div>
 </section>
 
 <section class="card step" aria-labelledby="s2">
 <div class="num" aria-hidden="true">2</div>
-<h3 id="s2">Add it to Chrome</h3>
+<h3 id="s2">Unzip it</h3>
 <div>
-<ol>
-<li>Type <code>chrome://extensions</code> in the address bar and press <kbd>Enter</kbd>.<br><small>Edge: <code>edge://extensions</code> · Brave: <code>brave://extensions</code></small></li>
-<li>Switch on <b>Developer mode</b> (top right).</li>
-<li>Click <b>Load unpacked</b> and choose the <code>extension</code> folder from step 1.</li>
-</ol>
-<div class="shots">
-<figure><img src="{{img:extensions-toolbar.png}}" width="550" alt="Chrome's extensions page with Developer mode switched on and the Load unpacked button"><figcaption>Developer mode on, then <b>Load unpacked</b>.</figcaption></figure>
-<figure><img src="{{img:extension-card.png}}" width="420" alt="The TankTrouble Skin Tools card on Chrome's extensions page"><figcaption>Done: Skin Tools is in your list.</figcaption></figure>
-</div>
+<p><b>Windows:</b> right-click the ZIP and choose <b>Extract All…</b>, then <b>Extract</b>.<br><b>Mac:</b> double-click the ZIP.</p>
+<p>You get a folder with <code>START-HERE.html</code> (this guide), <code>extension</code> (the add-on), <code>skin-packs</code> (three example skins) and <code>about</code>.</p>
+<p class="tip">Keep the folder somewhere it will stay, like <b>Documents</b>. Chrome runs the add-on from this folder, so don't move or delete it.</p>
 </div>
 </section>
 
 <section class="card step" aria-labelledby="s3">
 <div class="num" aria-hidden="true">3</div>
-<h3 id="s3">Open TankTrouble</h3>
+<h3 id="s3">Open Chrome's extensions page and switch on Developer mode</h3>
 <div>
-<p>Go to <a href="https://tanktrouble.com">tanktrouble.com</a>. A small black <b>Skins</b> button appears in the bottom-right corner. Click it to open the panel. You can drag the panel anywhere by its title bar, and the <b>–</b> button folds it away again.</p>
+<ol>
+<li>Type <code>chrome://extensions</code> in the address bar and press <kbd>Enter</kbd>.<br><small>Edge: <code>edge://extensions</code> · Brave: <code>brave://extensions</code></small></li>
+<li>Switch on <b>Developer mode</b> (top right). Three new buttons appear.</li>
+</ol>
+<div class="shots"><figure><img src="{{img:extensions-toolbar.png}}" width="550" alt="Chrome's extensions page with Developer mode switched on and the Load unpacked button"><figcaption>Developer mode on.</figcaption></figure></div>
+</div>
+</section>
+
+<section class="card step" aria-labelledby="s4">
+<div class="num" aria-hidden="true">4</div>
+<h3 id="s4">Click “Load unpacked”</h3>
+<div>
+<p>Click <b>Load unpacked</b> and choose the <code>extension</code> folder from step 2 (the one that contains <code>manifest.json</code>).</p>
+<div class="shots"><figure><img src="{{img:extension-card.png}}" width="420" alt="The TankTrouble Skin Tools card on Chrome's extensions page"><figcaption>Done: Skin Tools is in your list.</figcaption></figure></div>
+</div>
+</section>
+
+<section class="card step" aria-labelledby="s5">
+<div class="num" aria-hidden="true">5</div>
+<h3 id="s5">Open Skin Tools in TankTrouble</h3>
+<div>
+<p>Go to <a href="https://tanktrouble.com">tanktrouble.com</a>. A small black <b>Skins</b> button appears in the bottom-right corner. Click it to open the panel. Drag the panel by its title bar to move it, and use the <b>–</b> button to fold it away.</p>
 <div class="shots"><figure><img src="{{img:pill.png}}" width="190" alt="The small black Skins button with an on/off switch"><figcaption>The switch turns every skin on or off at once.</figcaption></figure></div>
 </div>
 </section>
 
 <h2 class="part" id="use">Use it</h2>
 
-<section class="card step" aria-labelledby="s4">
-<div class="num" aria-hidden="true">4</div>
-<h3 id="s4">Add the example skins</h3>
+<section class="card step" aria-labelledby="s6">
+<div class="num" aria-hidden="true">6</div>
+<h3 id="s6">Import a skin</h3>
 <div>
-<p>In the panel, click <b>Manage skins</b>, then <b>Add a folder</b>, and choose one folder inside <code>skin-packs</code> (for example <code>golden-tank</code>). Do this once for each skin you want.</p>
-<p>Skins from friends work the same way: a folder of PNG pictures and a <code>skin.json</code> file. You can also drag the files onto the panel. If something is wrong with a skin, the panel tells you which picture and what size it should be.</p>
+<p>In the panel click <b>Manage skins</b>, then <b>Add a folder</b>, and pick one folder inside <code>skin-packs</code> (for example <code>golden-tank</code>). Repeat for each skin you want. Skins from friends work the same way: a folder of PNG pictures and a <code>skin.json</code> file. You can also drag the files onto the panel. If a skin has a problem, the panel says which picture and what size it should be.</p>
 <div class="shots"><figure><img src="{{img:manage-skins.png}}" width="300" alt="The Manage skins page listing Golden Tank, Onyx Tank and 3D Shaders"><figcaption>Click a skin to wear it, or its picture to preview it. The bin removes it (it asks first).</figcaption></figure></div>
 </div>
 </section>
 
-<section class="card step" aria-labelledby="s5">
-<div class="num" aria-hidden="true">5</div>
-<h3 id="s5">Choose a skin</h3>
+<section class="card step" aria-labelledby="s7">
+<div class="num" aria-hidden="true">7</div>
+<h3 id="s7">Choose a skin</h3>
 <div>
 <p>Under <b>Who wears it</b>, leave <b>My tank</b> selected and pick a skin from the list. It changes right away. There is nothing else to press. Click the little picture to see it bigger.</p>
 <div class="shots">
@@ -123,40 +143,30 @@ footer{max-width:880px;margin:0 auto;padding:6px 18px 30px;color:var(--muted);fo
 </div>
 </section>
 
-<section class="card step" aria-labelledby="s6">
-<div class="num" aria-hidden="true">6</div>
-<h3 id="s6">Skins for other players</h3>
-<div>
-<p><b>Everyone</b> gives every tank the same skin. <b>A player</b> lets you search for one player by name and give just them a skin. The list shows the tanks in your match and players you've chosen before.</p>
-<div class="shots">
-<figure><img src="{{img:player-search.png}}" width="300" alt="Searching the player list for names containing ri"><figcaption>Type part of a name.</figcaption></figure>
-<figure><img src="{{img:player-chosen.png}}" width="300" alt="3D Shaders chosen for the player Ritchie"><figcaption>Only you see this. The other players' screens don't change.</figcaption></figure>
-</div>
-<p><b>3D Shaders</b> is special: it keeps each player's own colours and just makes their tank look 3D.</p>
-</div>
-</section>
-
-<section class="card step" aria-labelledby="s7">
-<div class="num" aria-hidden="true">7</div>
-<h3 id="s7">Colours (optional)</h3>
-<div>
-<p>Open <b>Advanced</b> to recolour the body, turret or treads of whoever you picked above. Under <b>Colours of this skin</b> you can show a skin exactly as painted, or tinted with each player's colour.</p>
-<div class="shots"><figure><img src="{{img:advanced.png}}" width="300" alt="The Advanced section with recolour swatches and colour mode buttons"><figcaption>Click a colour box to change it; the × puts the game's colour back.</figcaption></figure></div>
-</div>
-</section>
-
 <section class="card step" aria-labelledby="s8">
 <div class="num" aria-hidden="true">8</div>
-<h3 id="s8">Back to normal</h3>
+<h3 id="s8">Go back to the original look</h3>
 <div>
 <ul>
-<li><b>Everything off, right now:</b> flick the switch to <b>Off</b>. Turning it back on brings your skins back.</li>
+<li><b>Everything off, right now:</b> flick the switch to <b>Off</b>. Turn it on again to bring your skins back.</li>
+<li><b>Just your tank:</b> choose <b>Original look</b> at the top of the skin list.</li>
 <li><b>Forget who wears what:</b> Advanced → <b>Clear assignments</b>. Your skins stay installed.</li>
 <li><b>Delete a skin:</b> Manage skins → the bin next to it.</li>
 <li><b>Remove the add-on:</b> <code>chrome://extensions</code> → Skin Tools → <b>Remove</b>.</li>
 </ul>
 <div class="shots"><figure><img src="{{img:skins-off.png}}" width="300" alt="The panel with skins switched off"><figcaption>Off: you see the game's own tanks again.</figcaption></figure></div>
 </div>
+</section>
+
+<section class="card" aria-labelledby="extras">
+<h3 id="extras">Extras</h3>
+<p><b>Skins for other players.</b> <b>Everyone</b> gives every tank the same skin. <b>A player</b> lets you search for one player by name and give just them a skin. Only you see it. <b>3D Shaders</b> keeps each player's own colours and makes their tank look 3D.</p>
+<div class="shots">
+<figure><img src="{{img:player-search.png}}" width="300" alt="Searching the player list for names containing ri"><figcaption>Type part of a name.</figcaption></figure>
+<figure><img src="{{img:player-chosen.png}}" width="300" alt="3D Shaders chosen for the player Ritchie"><figcaption>Other players' screens don't change.</figcaption></figure>
+</div>
+<p><b>Colours.</b> Open <b>Advanced</b> to recolour the body, turret or treads of whoever you picked, or to show a skin as painted or tinted with each player's colour.</p>
+<div class="shots"><figure><img src="{{img:advanced.png}}" width="300" alt="The Advanced section with recolour swatches and colour mode buttons"><figcaption>The × puts the game's colour back.</figcaption></figure></div>
 </section>
 
 <section class="card" aria-labelledby="good">
@@ -174,12 +184,13 @@ footer{max-width:880px;margin:0 auto;padding:6px 18px 30px;color:var(--muted);fo
 <details><summary>I don't see the Skins button</summary><p>Reload the TankTrouble page. Check that Skin Tools is switched on in <code>chrome://extensions</code>, and that the address starts with <code>https://tanktrouble.com</code>.</p></details>
 <details><summary>There is no "Load unpacked" button</summary><p>Switch on <b>Developer mode</b> in the top-right corner of <code>chrome://extensions</code>.</p></details>
 <details><summary>Chrome warns that it "can't verify where this extension comes from"</summary><p>Chrome says this about add-ons that aren't from its web store when Developer mode is off. Keep Developer mode switched on. Skin Tools works only on tanktrouble.com and never uses the internet.</p></details>
+<details><summary>Chrome asks whether to keep "developer mode extensions"</summary><p>Chrome can show this reminder when it starts, because the add-on is loaded from a folder. Choose to keep it. Skin Tools is not from the Chrome Web Store, so this is normal.</p></details>
 <details><summary>The add-on stopped working after I moved or deleted the folder</summary><p>Chrome runs it from that folder. Put the folder back, or click <b>Load unpacked</b> again and choose the <code>extension</code> folder in its new place.</p></details>
 <details><summary>A skin won't install</summary><p>The panel explains what's wrong, for example a picture with the wrong size or a missing file. Ask whoever made the skin for a fixed version.</p></details>
 <details><summary>My skins disappeared</summary><p>They are stored by your browser for tanktrouble.com. Clearing that site's data, or playing in a private window, starts empty. Add them again from the <code>skin-packs</code> folder.</p></details>
 <details><summary>Something looks odd in the game</summary><p>Flick the switch to <b>Off</b>: the game's own look comes back immediately. Turning it on again re-applies your skins.</p></details>
 </section>
 </main>
-<footer>TankTrouble Skin Tools 1.0.0 · Privacy: <code>PRIVACY.txt</code> · Credits: <code>THIRD-PARTY-NOTICES.txt</code> · Licence: <code>LICENSE.txt</code> · TankTrouble is a trademark of its owners; this add-on is not affiliated with or endorsed by them.</footer>
+<footer>TankTrouble Skin Tools {{version}} · © 2026 Bleed (Dowells) · MIT licence · See the <code>about</code> folder for Privacy, Credits and Licence · Project page: <a href="{{repo}}">{{repo}}</a><br>TankTrouble is a trademark of its owners. This is an unofficial fan-made add-on, not affiliated with or endorsed by them.</footer>
 </body>
 </html>

@@ -16,7 +16,7 @@ const font = fontArg && fs.existsSync(fontArg) ? fs.readFileSync(fontArg).toStri
 const dist = path.join(root, 'dist');
 const top = fs.readdirSync(dist).map(n => path.join(dist, n)).find(p => fs.statSync(p).isDirectory());
 if (!top) { console.error('run npm run build first'); process.exit(1); }
-const out = path.join(root, 'guide', 'images');
+const out = path.join(root, 'screenshots');
 fs.mkdirSync(out, { recursive: true });
 
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'skin-tools-guide-'));

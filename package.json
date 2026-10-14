@@ -2,7 +2,17 @@
   "name": "tanktrouble-skin-tools",
   "version": "1.0.0",
   "private": true,
-  "description": "Unofficial cosmetic Chrome extension for TankTrouble: custom tank skins and recolours on your own screen.",
+  "description": "Unofficial cosmetic Chrome extension for TankTrouble: custom tank skins and recolours on your own screen only.",
+  "author": "Bleed (Dowells)",
+  "license": "MIT",
+  "homepage": "https://github.com/dowells-mike/tanktrouble-skin-tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dowells-mike/tanktrouble-skin-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dowells-mike/tanktrouble-skin-tools/issues"
+  },
   "scripts": {
     "build": "node build/build.mjs",
     "audit": "node build/audit.mjs",

@@ -1,5 +1,8 @@
 # Third-party notices and credits
 
+TankTrouble Skin Tools is Copyright (c) 2026 Bleed (Dowells) and released under the MIT licence (`LICENSE`). Everything below is credit
+for work that is not part of that copyright.
+
 ## The extension
 
 The extension contains no third-party code and no third-party assets. Everything in the `extension` folder was written or
@@ -16,9 +19,9 @@ supported by them.
 
 | Skin | Made from | Licence of the source |
 |---|---|---|
-| Golden Tank | Original 3D models and renders made for this project (Blender), plus original effect artwork. | This project's licence. |
-| Onyx Tank | The same original models with a different material, plus original effect artwork. | This project's licence. |
-| 3D Shaders | Rendered from the "TankTrouble in 3D" Blender model by **asger-finding** (https://github.com/asger-finding/tanktrouble-in-3d), with new lighting and a rim-light shader made for this project. | The model is dedicated to the public domain under **CC0 1.0** (https://creativecommons.org/publicdomain/zero/1.0/). Credit is given as a courtesy. |
+| Golden Tank | Original 3D models and renders (Blender) and effect artwork by Bleed (Dowells). | This project's licence (MIT). |
+| Onyx Tank | The same original models with a different material, and effect artwork, by Bleed (Dowells). | This project's licence (MIT). |
+| 3D Shaders | Rendered from the "TankTrouble in 3D" Blender model by **asger-finding** (https://github.com/asger-finding/tanktrouble-in-3d), with new lighting and a rim-light shader by Bleed (Dowells). | The model is dedicated to the public domain under **CC0 1.0** (https://creativecommons.org/publicdomain/zero/1.0/). Credit is given as a courtesy. |
 
 The example skins are sized to fit the game's tank frames so they line up in play. They do not contain or copy the game's
 own sprite images.

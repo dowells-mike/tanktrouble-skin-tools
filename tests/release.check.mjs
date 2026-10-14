@@ -13,7 +13,7 @@ import { launchWithExtension } from '../tools/chrome.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
-const zipName = fs.existsSync(dist) && fs.readdirSync(dist).find(n => n.endsWith('.zip') && !n.endsWith('-extension.zip'));
+const zipName = fs.existsSync(dist) && fs.readdirSync(dist).find(n => n.endsWith('.zip'));
 if (!zipName) { console.error('no release ZIP: run npm run build first'); process.exit(1); }
 let failures = 0;
 const check = (name, ok, detail) => { if (!ok) failures++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${ok || detail === undefined ? '' : `\n        -> ${JSON.stringify(detail)}`}`); };

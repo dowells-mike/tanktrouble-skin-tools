@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "3d-shaders",
   "name": "3D Shaders",
-  "author": "Skin Tools",
+  "author": "Bleed",
   "version": "1.0.0",
   "tint": {
     "base": "player",
