@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.cache/
+# personal patterns for the release audit (never commit)
+build/private-patterns.txt
+*.log

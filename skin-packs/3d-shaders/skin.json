@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "id": "3d-shaders",
+  "name": "3D Shaders",
+  "author": "Skin Tools",
+  "version": "1.0.0",
+  "tint": {
+    "base": "player",
+    "tread": "player",
+    "turret": "player"
+  },
+  "pixelScale": 1
+}

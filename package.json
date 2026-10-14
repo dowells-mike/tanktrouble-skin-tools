@@ -1,0 +1,20 @@
+{
+  "name": "tanktrouble-skin-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unofficial cosmetic Chrome extension for TankTrouble: custom tank skins and recolours on your own screen.",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "audit": "node build/audit.mjs",
+    "test": "node --test tests/unit.test.mjs",
+    "check": "node build/build.mjs && node tests/release.check.mjs",
+    "reproducible": "node build/reproducible.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright-core": "1.62.1"
+  }
+}

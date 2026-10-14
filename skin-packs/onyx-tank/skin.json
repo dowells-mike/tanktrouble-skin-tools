@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "onyx-tank",
+  "name": "Onyx Tank",
+  "author": "Skin Tools",
+  "version": "1.0.0",
+  "tint": {
+    "base": "none",
+    "tread": "none",
+    "turret": "none"
+  },
+  "pixelScale": 1,
+  "laser": {
+    "colour": "#7a86ff",
+    "glow": true
+  }
+}

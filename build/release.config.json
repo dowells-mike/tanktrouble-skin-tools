@@ -1,0 +1,39 @@
+{
+  "comment": "The release allowlist. Only what is listed here can reach the release folder and ZIPs; a missing source fails the build, and any file in the output that no rule produced fails the build too.",
+  "name": "TankTrouble-Skin-Tools",
+  "extension": {
+    "runtime": [
+      {
+        "out": "runtime/skin-tools-start.js",
+        "run_at": "document_start",
+        "sources": ["src/frames.js", "src/resample.js", "src/core.js", "src/hook.js"],
+        "why": "Runs before the game starts: frame sizes, image maths, and the hook that recolours and re-textures tank sprites as the game creates them."
+      },
+      {
+        "out": "runtime/skin-tools-panel.js",
+        "run_at": "document_idle",
+        "sources": ["src/png-info.js", "src/skin-package.js", "src/store.js", "src/importer.js", "src/preview.js", "src/panel.js", "src/main.js"],
+        "why": "The panel: skin import and validation, local storage of installed skins and choices, previews, and the on-screen controls."
+      }
+    ],
+    "icons": {
+      "16": { "src": "icons/icon16.png", "why": "Toolbar and extensions page icon (16 px)." },
+      "32": { "src": "icons/icon32.png", "why": "Icon for high-density displays (32 px)." },
+      "48": { "src": "icons/icon48.png", "why": "Extensions page icon (48 px)." },
+      "128": { "src": "icons/icon128.png", "why": "Install dialog and store icon (128 px)." }
+    },
+    "files": [
+      { "out": "LICENSE.txt", "src": "LICENSE", "why": "The licence travels with the code." }
+    ]
+  },
+  "skinPacks": {
+    "packs": ["golden-tank", "onyx-tank", "3d-shaders"],
+    "why": "Example skins a player can install with Manage skins > Add a folder. Each file is a frame the extension draws, or the pack's skin.json."
+  },
+  "documents": [
+    { "out": "Install-Guide.html", "src": "guide/guide.html", "kind": "guide", "why": "The illustrated installation and how-to guide (one file, images embedded)." },
+    { "out": "PRIVACY.txt", "src": "PRIVACY.md", "why": "What the extension stores and that nothing leaves the browser." },
+    { "out": "THIRD-PARTY-NOTICES.txt", "src": "THIRD-PARTY-NOTICES.md", "why": "Credits and licences for third-party work used to make the example skins." },
+    { "out": "LICENSE.txt", "src": "LICENSE", "why": "The licence of this project." }
+  ]
+}

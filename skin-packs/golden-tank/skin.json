@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "golden-tank",
+  "name": "Golden Tank",
+  "author": "Skin Tools",
+  "version": "1.0.0",
+  "tint": {
+    "base": "none",
+    "tread": "none",
+    "turret": "none"
+  },
+  "pixelScale": 1,
+  "laser": {
+    "colour": "#ffc21a",
+    "glow": true
+  }
+}
