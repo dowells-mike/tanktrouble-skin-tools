@@ -4,3 +4,10 @@ dist/
 # personal patterns for the release audit (never commit)
 build/private-patterns.txt
 *.log
+
+# starter kit: copies of extension/src files made by starter-kit/sync-libs.mjs
+starter-kit/src/artist-tools/lib/frames.js
+starter-kit/src/artist-tools/lib/resample.js
+starter-kit/src/artist-tools/lib/png-info.js
+starter-kit/src/artist-tools/lib/skin-package.js
+dist-starter-kit/

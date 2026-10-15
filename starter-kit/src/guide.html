@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TankTrouble Skin Creator Starter Kit: guide</title>
+<style>
+:root{--blue1:#427fff;--blue2:#0014ab;--ink:#262626;--muted:#555;--card1:#f5f5f5;--card2:#d9d9d9}
+*{box-sizing:border-box}
+html{background:#e7ebef}
+body{margin:0;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;background:repeating-linear-gradient(45deg,#eef1f4 0 18px,#e7ebef 18px 36px)}
+a{color:#0b3fd0}
+.top{background:#000;color:#fff}
+.top .in{max-width:900px;margin:0 auto;padding:14px 18px}
+.top h1{margin:0;font:900 26px/1.1 "Arial Black","Arial Bold",Arial,sans-serif;letter-spacing:.3px}
+.top p{margin:2px 0 0;color:#cfd6dc;font-size:14px}
+main{max-width:900px;margin:0 auto;padding:18px}
+h2.part{font:900 22px/1.2 "Arial Black",Arial,sans-serif;margin:28px 0 0}
+h3{margin:4px 0 2px;font:900 18px/1.25 "Arial Black",Arial,sans-serif}
+.card{margin:14px 0;padding:16px 18px;border-radius:6px;background:linear-gradient(var(--card1),var(--card2));box-shadow:0 8px 16px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.12)}
+.card>:first-child{margin-top:0}.card>:last-child{margin-bottom:0}
+.hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero .text{flex:1 1 320px}
+.hero img{width:280px;max-width:100%;height:auto;border-radius:6px;box-shadow:0 6px 14px rgba(0,0,0,.25);background:#fff}
+.btn{display:inline-block;margin:10px 10px 0 0;padding:6px 16px;border-radius:5px;color:#fff;text-decoration:none;font:900 16px/1.6 "Arial Black",Arial,sans-serif;background:linear-gradient(var(--blue1),var(--blue2));box-shadow:0 3px 4px rgba(0,0,0,.5)}
+.btn.glass{color:#222;background:linear-gradient(#fff,#e2e2e2);border:1px solid #8f8f8f;box-shadow:0 2px 3px rgba(0,0,0,.25)}
+kbd,code{font:14px Consolas,"Courier New",monospace;background:#fff;border:1px solid #b9b9b9;border-radius:4px;padding:0 5px}
+pre{margin:8px 0;padding:10px 12px;overflow:auto;border-radius:6px;background:#111;color:#e8eef4;font:13px/1.5 Consolas,"Courier New",monospace}
+pre code{background:none;border:0;padding:0;color:inherit}
+table{border-collapse:collapse;width:100%;margin:8px 0;background:#fff;font-size:14px}
+th,td{padding:5px 9px;border:1px solid #c9ced3;text-align:left;vertical-align:middle}
+th{background:#f0f2f4}
+td.n{white-space:nowrap}
+td img{display:block;width:68px;height:auto;background:repeating-conic-gradient(#d6d6d6 0 25%,#f0f0f0 0 50%) 0 0/12px 12px;border-radius:3px}
+.tip code,.warn code{color:#222}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px;margin:8px 0}
+.frame{display:flex;gap:10px;align-items:center;padding:6px 8px;border-radius:6px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);font-size:14px}
+.frame img{flex:none;width:68px;height:auto;background:repeating-conic-gradient(#d6d6d6 0 25%,#f0f0f0 0 50%) 0 0/12px 12px;border-radius:3px}
+.tip{margin:10px 0 0;padding:8px 12px;border-radius:5px;background:#000;color:#fff;font-size:14px}
+.warn{margin:10px 0 0;padding:8px 12px;border-radius:5px;background:#fff3cd;color:#4d3b00;font-size:14px;box-shadow:0 0 0 1px #e0c45c}
+figure{margin:10px 0}
+figure img{display:block;max-width:100%;height:auto}
+figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+.checker{background:repeating-conic-gradient(#d6d6d6 0 25%,#f0f0f0 0 50%) 0 0/16px 16px;border-radius:6px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.parts{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.parts figure{margin:0;text-align:center;font-size:13px}
+.parts img{margin:0 auto;border-radius:4px}
+.stack img{max-width:none}
+details{margin:8px 0;padding:8px 12px;border-radius:6px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+summary{cursor:pointer;font-weight:700}
+details ol,details ul{margin:6px 0 2px;padding-left:22px}
+ol,ul{padding-left:22px}
+li{margin:3px 0}
+footer{max-width:900px;margin:0 auto;padding:6px 18px 30px;color:var(--muted);font-size:13px}
+:focus-visible{outline:3px solid #ffd400;outline-offset:2px}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px}
+nav.toc a{padding:3px 11px;border-radius:14px;background:#fff;text-decoration:none;font-size:14px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+<h1>TankTrouble Skin Creator Starter Kit</h1>
+<p>Guide · version {{version}} · an unofficial fan-made kit by Bleed for TankTrouble Skin Tools</p>
+</div></header>
+<main>
+
+<section class="card hero" aria-labelledby="hello">
+<div class="text">
+<h2 id="hello" style="margin:0 0 6px;font:900 24px/1.2 'Arial Black',Arial,sans-serif">Make your own tank skin</h2>
+<p>A skin is a folder of PNG pictures: the body, the treads and the turret. This kit gives you <b>blank templates with guides</b>, an <b>example skin you can import right now</b>, and this short guide. Skins only change how tanks <b>look on your own screen</b>.</p>
+<a class="btn" href="#try">Try the example (2 min)</a><a class="btn glass" href="#make">Make your own</a>
+</div>
+<img src="{{img:panel-preview.png}}" alt="The Skin Tools preview showing the Classic Tank example skin">
+</section>
+
+<nav class="toc" aria-label="Sections">
+<a href="#kit">What is in the kit</a><a href="#try">1 Try the example</a><a href="#build">2 How a tank is built</a><a href="#frames">3 The turret frames</a><a href="#make">4 Draw and export</a><a href="#json">5 skin.json</a><a href="#import">6 Import and fix problems</a><a href="#atlas">Optional tools</a>
+</nav>
+
+<h2 class="part" id="kit">What is in the kit</h2>
+<section class="card">
+<table>
+<tr><th>Folder</th><th>What it is</th></tr>
+<tr><td class="n"><code>example-skin/</code></td><td>A complete skin (<b>Classic Tank</b>): the plain white TankTrouble tank, drawn from scratch, with body, treads, 12 tread-shade frames and all 17 turret frames (every weapon and its animation), plus its <code>skin.json</code>. It takes each player's colour, like the game's own tank. Import this folder first, and open the pictures to see how each one is drawn.</td></tr>
+<tr><td class="n"><code>templates/blank/</code></td><td>Empty, transparent PNGs with exactly the right canvas size for the body, a tread and a turret, at 1×, 2× and 4×. <b>Start here for any program.</b></td></tr>
+<tr><td class="n"><code>templates/guides/</code></td><td>The same canvases with guide lines (outline, centre, muzzle, hitbox, tread positions) and the <b>grey outline of the classic tank's shape</b>, plus a whole-tank reference. Put them on a layer above your art; hide them before you export.</td></tr>
+<tr><td class="n"><code>templates/shape-guides/</code></td><td>One guide per picture at 4×: the guide lines and the outline of that picture of the classic tank, for <b>every turret frame</b> (so you can trace or compare the double barrel, the shotgun, the missile ...).</td></tr>
+<tr><td class="n"><code>templates/psd/</code></td><td>One layered Photoshop file with the whole tank in place, a locked guides group, one empty layer per picture, and the classic white tank as a faint locked <b>tracing group</b> (never exported). Optional; Krita, GIMP and Procreate can open it too.</td></tr>
+<tr><td class="n"><code>artist-tools/</code></td><td>Two optional command-line helpers (need Node.js): one turns the PSD into the PNGs, one turns a texture atlas (a sheet + JSON) into a skin. Plus a small example atlas.</td></tr>
+<tr><td class="n"><code>about/</code></td><td>Licence and credits.</td></tr>
+</table>
+</section>
+
+<h2 class="part" id="try">1. Try the example first</h2>
+<section class="card">
+<ol>
+<li>Install <b>TankTrouble Skin Tools</b> (the <a href="{{repo}}/releases/latest">main download</a> on its GitHub releases page) and open <a href="https://tanktrouble.com">tanktrouble.com</a>.</li>
+<li>Click the small black <b>Skins</b> button, then <b>Manage skins</b> and <b>Add a folder</b>.</li>
+<li>Choose this kit's <code>example-skin</code> folder. The panel says <i>Installed “Classic Tank”</i>.</li>
+<li>Press <b>Put it on my tank</b>. Click the little picture to see it large. The classic tank is white, so it appears in <b>your tank's colours</b>, just like the game's own.</li>
+</ol>
+<div class="row">
+<figure><img src="{{img:panel-manage-installed.png}}" width="280" alt="Manage skins after installing the Classic Tank" ><figcaption>After choosing the folder.</figcaption></figure>
+<figure><img src="{{img:panel-chosen.png}}" width="280" alt="The Classic Tank chosen for My tank"><figcaption>On your tank. The enlarged preview is the picture at the top of this page.</figcaption></figure>
+</div>
+<p class="tip">Open the files in <code>example-skin</code> next to the guides in <code>templates/guides</code>: every picture is drawn on the template's exact canvas, so you can see where art belongs.</p>
+</section>
+
+<h2 class="part" id="build">2. How a tank is built</h2>
+<section class="card">
+<p>The game builds every tank from the same stack of pictures, bottom to top. <b>You draw each picture facing up</b> (the barrel points to the top of the picture); the game turns the whole tank.</p>
+<div class="row">
+<figure class="checker" style="padding:10px"><img src="{{gen:assembled}}" width="224" alt="The example skin's pieces assembled into a tank"><figcaption style="background:#fff;padding:2px 6px">The finished tank</figcaption></figure>
+<figure class="checker" style="padding:10px"><img src="{{gen:assembled-guides}}" width="224" alt="The same tank with the guide lines drawn over it"><figcaption style="background:#fff;padding:2px 6px">With the guides: red hitbox, green muzzle, blue centre</figcaption></figure>
+</div>
+<div class="parts stack">
+<figure class="checker" style="padding:6px"><img src="{{art:base}}" width="68" alt="body"><figcaption><code>base</code><br>68 × 84<br>1 · body</figcaption></figure>
+<figure class="checker" style="padding:6px"><img src="{{art:tread}}" width="12" alt="tread"><figcaption><code>tread</code><br>12 × 80<br>2 · used twice</figcaption></figure>
+<figure class="checker" style="padding:6px"><img src="{{art:treadShade3}}" width="12" alt="tread shade"><figcaption><code>treadShade0…11</code><br>12 × 80<br>3 · on each tread</figcaption></figure>
+<figure class="checker" style="padding:6px"><img src="{{art:turret0}}" width="68" alt="turret"><figcaption><code>turret0…16</code><br>68 × 82<br>4 · on top</figcaption></figure>
+</div>
+<ol>
+<li><b>Body</b> (<code>base</code>). One picture that never changes. Its centre, pixel (34, 42), is the middle of the tank.</li>
+<li><b>Treads</b> (<code>tread</code>). <b>One</b> picture, placed twice: 26 px left and 26 px right of the centre, <b>not mirrored</b>. So do not paint light from one side that would look wrong on the other.</li>
+<li><b>Tread shade</b> (<code>treadShade0</code> to <code>treadShade11</code>, optional). Twelve see-through overlays drawn on top of each tread. This is the <b>tread animation</b>: while the tank drives, the game steps each tread's own frame number up (forward) or down (backward), wrapping 11 → 0; when the tank turns on the spot the two treads run in opposite directions. Draw a pattern that repeats along the tread and moves a little further in each frame, so frame 12 would look like frame 0. In the game's own frames the pattern repeats every 14 px and moves <b>up</b> by about 1.17 px per frame (14 ÷ 12) as the number rises; the classic tank does the same (a band every 14 px). Leave all twelve out to keep the game's own animation. Shade pictures are never tinted.</li>
+<li><b>Turret</b> (<code>turret0</code> to <code>turret16</code>). The game shows <b>one</b> turret picture at a time and swaps it to animate the weapon. <b>A weapon animation is simply several turret pictures</b> in a fixed order that you draw and the game plays (next section). The turret turns around the tank's centre, which is pixel (34, 57) of every turret picture (the turret canvas is 82 px tall and sits 16 px above the body's centre).</li>
+</ol>
+<p><b>Muzzle:</b> shots leave the barrel 50 px ahead of the tank's centre, which is pixel <b>(34, 7)</b> of a turret picture. Put the barrel tip within a few pixels of it. <b>Hitbox:</b> the game's tank box is 60 × 80 around the centre plus a 14 × 28 barrel box. The art never changes it, but keep your tank close to that size so you can still aim honestly.</p>
+<table>
+<tr><th>Picture</th><th>1× (the game's own size)</th><th>2×</th><th>4×</th></tr>
+{{table:sizes}}
+</table>
+<p class="tip">Required: <code>base</code>, <code>tread</code>, <code>turret0</code>. Strongly recommended: <code>turret1</code> and <code>turret2</code> (the default gun's recoil). <b>Anything you leave out stays the game's own picture</b>, so you can start small. Every file must be exactly its canvas size, at the same scale as the others (1×, 2× or 4×).</p>
+</section>
+
+<h2 class="part" id="frames">3. The turret frames</h2>
+<section class="card">
+<p>Which turret picture shows when. The thumbnails are the example skin's.</p>
+<div class="frames">
+{{table:turrets}}
+</div>
+<p>How the animated ones play: <code>turret1</code> then <code>turret2</code> after each shot of the default gun (then back to <code>turret0</code>), the shotgun recoil goes 9, 10, 11, 10, 9 over about a second, and the gatling gun flips between 15 and 16, faster as it charges. You draw the stages; the game does the timing.</p>
+<p class="warn"><b>Colour:</b> with <code>"tint": "none"</code> (the default for a skin without a <code>skin.json</code>) the weapons you did <b>not</b> draw show the game's own turret coloured with the player's turret colour, which can clash with your art. Drawing all 17 turret frames avoids that. The classic tank uses <code>"player"</code> instead: it is drawn in white and greys with a black outline, so every player's colour shows through, as in the game.</p>
+</section>
+
+<h2 class="part" id="make">4. Draw and export</h2>
+<section class="card">
+<p><b>Settings that matter in every program:</b> PNG, <b>RGBA (with transparency)</b>, 8 bits per channel, sRGB, <b>no interlacing</b>, <b>no cropping or trimming</b>, no background layer, and the file named exactly like the picture (<code>turret3.png</code>, lower-case <code>.png</code>). Work at 1×, 2× or 4× the native size; Skin Tools reduces bigger art for you with clean edges, so 4× gives smoother edges.</p>
+<p><b>The simple method that works everywhere:</b> open <code>templates/blank/turret_4x.png</code> (the right size, transparent), put <code>templates/guides/turret_4x.png</code> on a layer above it, paint on a layer between them, hide the guides layer, and export. Repeat for each picture. To make 17 turrets, finish <code>turret0</code>, then edit copies of it for the other weapons.</p>
+<details open><summary>Photoshop</summary>
+<ol>
+<li><b>File ▸ Open</b> the blank template, e.g. <code>blank/turret_4x.png</code>. Then <b>File ▸ Place Embedded…</b> and choose <code>guides/turret_4x.png</code>: it lands exactly on top. Lock that layer.</li>
+<li>Paint on a new layer below the guides (use a layer per part of the barrel if you like).</li>
+<li>Hide the guides layer. <b>File ▸ Export ▸ Export As…</b>: Format <b>PNG</b>, <b>Transparency</b> on, Metadata <b>None</b>, <b>Convert to sRGB</b> on, leave the canvas size alone. Name it <code>turret3.png</code> and so on.</li>
+<li>The layered route: open <code>templates/psd/tanktrouble-skin-template-4x.psd</code>, paint on the layer with the picture's name (turret layers are inside <i>ART</i>), save, then run the PSD helper (see <a href="#atlas">Optional tools</a>) to get all the PNGs and a <code>skin.json</code> in one go.</li>
+</ol>
+</details>
+<details><summary>GIMP</summary>
+<ol>
+<li><b>File ▸ Open</b> the blank template, then <b>File ▸ Open as Layers…</b> and choose the matching file from <code>guides/</code>. Add a transparent layer for your art and keep the guides on top.</li>
+<li>Hide the guides layer. <b>File ▸ Export As…</b> (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>E</kbd>), name it <code>turret3.png</code>.</li>
+<li>In the PNG options, leave <b>Interlacing (Adam7)</b> off, turn <b>Save background color</b> off, and choose pixel format <b>8 bpc RGBA</b>.</li>
+</ol>
+</details>
+<details><summary>Krita</summary>
+<ol>
+<li><b>File ▸ Open</b> the blank template. Bring the guides in as a layer above it: <b>Layer ▸ Import/Export ▸ Import Layer…</b> (or open the guides picture and copy-paste it). Paint on a new layer.</li>
+<li>Hide the guides layer. <b>File ▸ Export…</b> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd>) as <b>PNG</b>, named <code>turret3.png</code>.</li>
+<li>In the PNG options keep <b>Store alpha channel (transparency)</b> on, <b>Interlacing</b> off, <b>Save as indexed PNG</b> off, and <b>Force convert to sRGB</b> on.</li>
+</ol>
+</details>
+<details><summary>Procreate</summary>
+<ol>
+<li>The easiest way is the <b>PSD template</b>: copy <code>templates/psd/tanktrouble-skin-template-4x.psd</code> to your iPad, open it in Procreate, and paint on the layers named after the pictures (leave the guides layers where they are). Export as <b>PSD</b>, bring the file back to a computer, and run the PSD helper (see <a href="#atlas">Optional tools</a>) to get the PNGs.</li>
+<li>Working from a PNG template also works: import <code>guides/turret_4x.png</code> as a canvas, add a layer above it, paint, <b>hide the guides layer</b> (and the background colour), and use <b>Actions ▸ Share ▸ PNG</b>. Procreate may not accept very small images; if the tread template is refused, use the PSD route.</li>
+<li>Do not export JPEG (it has no transparency).</li>
+</ol>
+</details>
+<details><summary>Any other program (Aseprite, Paint.NET, Affinity …)</summary>
+<p>Open the blank PNG, paint inside it, and export a PNG with transparency, exactly the same size, with the right name. Check the result is <b>not</b> an indexed-colour PNG with a solid background.</p>
+</details>
+<p class="tip"><b>Before you import:</b> each file is exactly its canvas size · transparent background · facing up · 1 px clear border · named correctly · all 12 tread shades or none · every file at the same scale.</p>
+<p class="tip">Semi-transparent edge pixels should carry your art's own colour, not white or black, or a thin halo shows on dark floors. If you see one, export again with no matte, or paint the edge on its own layer.</p>
+</section>
+
+<h2 class="part" id="json">5. skin.json</h2>
+<section class="card">
+<p>A small text file saved next to your pictures. The example's, exactly as it is in <code>example-skin/skin.json</code>:</p>
+<pre><code>{{skinjson}}</code></pre>
+<table>
+<tr><th>Key</th><th>Meaning</th></tr>
+<tr><td class="n"><code>schema</code></td><td>Always <code>1</code>. Required.</td></tr>
+<tr><td class="n"><code>id</code></td><td>Required. Lower-case letters, digits and hyphens, 1 to 40 characters, not starting with a hyphen.</td></tr>
+<tr><td class="n"><code>name</code>, <code>author</code>, <code>version</code></td><td>Shown in the panel; up to 60 characters each. Optional.</td></tr>
+<tr><td class="n"><code>tint</code></td><td>What happens to the player's colour, per part (<code>base</code>, <code>tread</code>, <code>turret</code>). See below.</td></tr>
+<tr><td class="n"><code>pixelScale</code></td><td>Optional check: <code>1</code>, <code>2</code> or <code>4</code>. It must match the size of your pictures, or the import is refused.</td></tr>
+</table>
+<ul>
+<li><code>id</code> is the skin's identity: installing a skin with an <code>id</code> you already have <b>replaces</b> it. Change it for every new skin.</li>
+<li><code>tint</code> says what happens to the player's colour, per part. <code>"none"</code>: your picture is shown exactly as drawn. <code>"player"</code>: your picture is multiplied by each player's colour, so paint it in <b>white and light greys</b> (white shows the full player colour, grey darkens it, black stays black; it can never brighten). <b>The example uses <code>"player"</code></b>, which is why it is plain white: that is how the game's own tank works, and a skin like this recolours with every player.</li>
+<li>Optional <code>"laser": { "colour": "#ff2f40", "glow": true }</code> sets your laser's colour.</li>
+<li>No <code>skin.json</code>? The folder name becomes the id and everything is shown as drawn.</li>
+</ul>
+</section>
+
+<h2 class="part" id="import">6. Import it, and fix problems</h2>
+<section class="card">
+<ol>
+<li>Put your pictures and <code>skin.json</code> in one folder.</li>
+<li>In Skin Tools: <b>Manage skins ▸ Add a folder</b> and choose it. Then pick it under <b>Skin</b>.</li>
+</ol>
+<p>If anything is wrong the panel installs nothing and lists each problem by file name. The usual ones:</p>
+<table>
+<tr><th>The panel says</th><th>What to do</th></tr>
+{{table:problems}}
+</table>
+<p>The sizes and names in these lines are examples; the panel names your own file and the size it found.</p>
+</section>
+
+<h2 class="part" id="atlas">Optional tools for artists</h2>
+<section class="card">
+<p>These need <a href="https://nodejs.org">Node.js</a> 20 or newer (a one-time download). They work offline, install nothing and change nothing outside the folder you name. Open a terminal inside this kit's <code>artist-tools</code> folder.</p>
+<h3>From a layered PSD to a skin</h3>
+<pre><code>node psd-to-skin.mjs my-skin.psd --out my-skin --id my-skin --name "My Skin" --author "You"</code></pre>
+<p>Cuts every layer named after a picture (<code>base</code>, <code>tread</code>, <code>treadShade0</code>… <code>turret16</code>) out of the PSD template at the right place, exports the PNGs and writes <code>skin.json</code>. Add <code>--scale 2</code> to export at half the PSD's detail. It tells you about anything it skipped or cut off.</p>
+<h3>From a texture atlas to a skin</h3>
+<p>If your pictures already sit in one sheet with a JSON list (the TexturePacker / Phaser / PixiJS format), convert them in one step. The kit includes a small atlas to try:</p>
+<pre><code>node atlas-to-skin.mjs example-atlas/classic-tank-atlas.json --out converted --id converted-example --preview</code></pre>
+<p>It reads the sheet and the JSON, puts every picture on its full canvas (trimmed pictures go back where they belong), brings everything to one scale (a smaller sheet, for example a half-size one, is <b>refused unless you pass <code>--upscale smooth</code> or <code>--upscale sharp</code></b>: enlarging adds no detail, so it is always your choice), writes the PNGs and a <code>skin.json</code>, and then checks the result with the same rules Skin Tools uses on import. <code>--preview</code> also writes a contact sheet to look at. Nothing is assumed about the atlas: each picture is measured, bigger or 3× sheets are reduced exactly (a warning says whenever pictures were <i>enlarged</i>), and rotated pictures or sheets with a missing required picture are refused with a clear message. <code>node atlas-to-skin.mjs --help</code> lists the options (<code>--tint</code>, <code>--scale</code>, <code>--upscale</code>, <code>--partial</code>).</p>
+<p class="warn"><b>Rights.</b> Only convert pictures you made or have permission to use, and do not share artwork that belongs to someone else. The format, the picture names and the proportions of the plain white tank were studied in the open-source <a href="https://github.com/kamarov-therussiantank/Textured-Tanks">Textured Tanks</a> extension by Kamarov (MIT licence, Copyright (c) 2026 Kamarov). <b>None of its artwork or code is in this kit:</b> the Classic Tank is drawn from scratch to the same dimensions. The look of the tank belongs to TankTrouble's makers; this kit is unofficial.</p>
+</section>
+
+<h2 class="part" id="more">Beyond tanks</h2>
+<section class="card">
+<p>Skin Tools can also change shots, missiles, mines, explosions, shields and crates. Those pictures and their sizes are listed in the Skin Tools guide (<code>docs/MAKING-SKINS.md</code> in the repository, section 4) and work the same way: a PNG named after the picture, at its exact size, in your skin folder.</p>
+</section>
+</main>
+<footer>
+<p>Unofficial: not affiliated with or endorsed by the makers of TankTrouble. © {{year}} Bleed, MIT licence (see <code>about/LICENSE.txt</code>). Kit {{kit}} · built to match Skin Tools {{extension}}.</p>
+</footer>
+</body>
+</html>

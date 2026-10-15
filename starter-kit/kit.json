@@ -1,0 +1,5 @@
+{
+  "name": "TankTrouble-Skin-Creator-Starter-Kit",
+  "version": "1.0.0",
+  "comment": "A separate, optional download for people who want to make their own skins. It is built by starter-kit/build.mjs and is not part of the main release ZIP."
+}

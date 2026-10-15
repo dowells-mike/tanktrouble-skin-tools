@@ -9,6 +9,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { readZip } from './zip.mjs';
 import { chunkTypes } from './png.mjs';
+import { findIdentifiers } from '../starter-kit/privacy.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(here, '..');
@@ -35,7 +36,7 @@ const AUTOMATION = [
   ['a network or code-evaluation API', /\b(fetch|XMLHttpRequest|WebSocket|EventSource|importScripts|eval)\s*\(|new\s+Function\b|navigator\.sendBeacon/],
   ['an extension API that needs permissions', /\bchrome\.(runtime|storage|tabs|webRequest|cookies|history|identity|scripting|downloads)\b/]
 ];
-const ALLOWED_URL = /^https?:\/\/(tanktrouble\.com|github\.com|www\.w3\.org\/2000\/svg|creativecommons\.org|opensource\.org|spdx\.org|example\.(org|com))(\/|$|")/;   // example.* are reserved test domains
+const ALLOWED_URL = /^https?:\/\/(tanktrouble\.com|github\.com|nodejs\.org|www\.w3\.org\/2000\/svg|creativecommons\.org|opensource\.org|spdx\.org|example\.(org|com))(\/|$|")/;   // example.* are reserved test domains
 const ALLOWED_PNG_CHUNKS = new Set(['IHDR', 'PLTE', 'tRNS', 'IDAT', 'IEND']);
 const SKIN_JSON_KEYS = new Set(['schema', 'id', 'name', 'author', 'version', 'tint', 'pixelScale', 'laser']);
 
@@ -97,6 +98,22 @@ export function auditRelease({ zipFile }) {
   return findings;
 }
 
+/** Audits the starter-kit archive: every entry name and every file for real-world identifiers, plus the usual file rules. */
+export function auditKitZip(zipFile) {
+  const findings = [];
+  const name = path.basename(zipFile);
+  const bytes = fs.readFileSync(zipFile);
+  findings.push(...findIdentifiers(`${name} (archive headers)`, bytes));
+  for (const e of readZip(bytes)) {
+    const where = `${name}:${e.path}`;
+    findings.push(...findIdentifiers(`${where} (name)`, e.path, { text: true }));
+    findings.push(...findIdentifiers(where, e.data, { text: !/\.(png|psd)$/i.test(e.path) }));
+    if (e.extra) findings.push(`${where}: carries extra ZIP metadata`);
+    if (/\.png$/i.test(e.path)) findings.push(...auditFile(where, e.data));
+  }
+  return findings;
+}
+
 /** Audits every file git tracks in this project (what a public repository would show). */
 export function auditRepository(root = projectRoot) {
   const files = execFileSync('git', ['ls-files', '-z'], { cwd: root }).toString().split('\0').filter(Boolean);
@@ -105,6 +122,8 @@ export function auditRepository(root = projectRoot) {
   for (const rel of files) {
     if (skip.test(rel)) continue;
     const data = fs.readFileSync(path.join(root, rel));
+    // the starter kit carries only the TankTrouble username: no real-world identifier may appear in its sources, its tests or its pictures
+    if (/^(starter-kit\/|tests\/starter-kit\.)/.test(rel)) findings.push(...findIdentifiers(rel, data, { text: !/\.(png|psd)$/i.test(rel) }));
     if (/\.(png)$/i.test(rel)) { findings.push(...auditFile(rel, data)); continue; }
     const plain = /(^|\/)(LICENSE|\.gitignore|\.gitattributes)$/.test(rel);
     if (!TEXT.test(rel) && !plain) { findings.push(`${rel}: unexpected file type in the repository`); continue; }
@@ -120,8 +139,15 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   let findings = [];
   if (zipFile) findings = auditRelease({ zipFile: path.join(dist, zipFile) });
   else console.log('no release archives in dist/ (run npm run build first); auditing the repository only');
+  const kitDist = path.join(projectRoot, 'dist-starter-kit');
+  const kitZips = fs.existsSync(kitDist) ? fs.readdirSync(kitDist).filter(n => n.endsWith('.zip')) : [];
+  for (const z of kitZips) findings.push(...auditKitZip(path.join(kitDist, z)));
   let repo = [];
-  try { repo = auditRepository(); } catch (e) { console.log(`repository audit skipped: ${e.message}`); }
+  try { repo = auditRepository(); } catch (e) {
+    // inside a git checkout an audit that cannot finish is a failure, never a silent skip
+    if (fs.existsSync(path.join(projectRoot, '.git'))) repo = [`the repository audit could not finish: ${e.message}`];
+    else console.log(`repository audit skipped (not a git checkout): ${e.message}`);
+  }
   for (const f of [...findings, ...repo]) console.log(`FINDING  ${f}`);
   console.log(`${privatePatterns().length} private pattern(s) loaded from build/private-patterns.txt`);
   console.log(findings.length + repo.length ? `${findings.length + repo.length} finding(s)` : 'clean: no findings in the archives or the tracked files');

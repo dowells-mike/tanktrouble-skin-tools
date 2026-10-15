@@ -18,7 +18,10 @@
     "audit": "node build/audit.mjs",
     "test": "node --test tests/unit.test.mjs",
     "check": "node build/build.mjs && node tests/release.check.mjs",
-    "reproducible": "node build/reproducible.mjs"
+    "reproducible": "node build/reproducible.mjs",
+    "starter-kit": "node starter-kit/build.mjs",
+    "test:starter-kit": "node --test tests/starter-kit.test.mjs",
+    "check:starter-kit": "node starter-kit/build.mjs && node tests/starter-kit.check.mjs"
   },
   "engines": {
     "node": ">=20"

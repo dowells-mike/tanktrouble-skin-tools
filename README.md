@@ -82,6 +82,32 @@ A skin is a folder of PNG pictures (the body, the treads and the turret frames) 
 it expected. Painting at 2× or 4× the game's size is fine; it is reduced for you. The full guide, with sizes for every picture,
 is in [docs/MAKING-SKINS.md](docs/MAKING-SKINS.md).
 
+### Skin Creator Starter Kit (optional, separate download)
+
+Want to make your own skin? The **Skin Creator Starter Kit** has everything to begin, in a small download of its own (about 0.6 MB) so
+the add-on stays tiny:
+
+- **Blank templates**: empty transparent PNGs at exactly the right canvas size (body, tread, turret at 1×, 2× and 4×), plus the same
+  canvases with **guides** for the tank's centre, muzzle, hitbox and tread positions and the **outline of the familiar white tank**, plus one
+  shape guide for every turret frame.
+- **A layered Photoshop template** with the whole tank in place and the white tank as a faint tracing layer (Krita, GIMP and Procreate can
+  open it too).
+- **A complete example skin, "Classic Tank"**, that you can import straight away: the plain white TankTrouble tank (drawn from scratch, in
+  the game's own proportions) with body, treads, the 12-frame tread animation and all 17 turret frames (every weapon and its animation), a
+  documented `skin.json`, and it takes every player's colour like the game's own tank.
+- **A short illustrated guide** for Photoshop, GIMP, Krita and Procreate that explains how the body, treads, turret frames and
+  weapon animations fit together, how to export, and how to fix the problems the panel reports.
+- **Optional tools for artists**: turn the PSD into a skin, or convert a texture atlas (a PNG sheet + JSON list) into one.
+
+<p align="center">
+  <img src="starter-kit/guide-images/panel-preview.png" width="250" alt="The Classic Tank example skin in the Skin Tools preview, wearing the preview's sample colours">
+  <img src="starter-kit/guide-images/turret-frames.png" width="560" alt="All 17 turret frames of the Classic Tank, drawn by Skin Tools with the guides on">
+</p>
+
+Download **`TankTrouble-Skin-Creator-Starter-Kit-1.0.0.zip`** from the
+[Starter Kit release](../../releases/tag/starter-kit-v1.0.0) (it is a separate release; the add-on's download above is unchanged), unzip
+it and open **`START-HERE.html`**.
+
 ## How it works
 
 TankTrouble draws its tanks from small pictures, tinted with each player's colours. Skin Tools runs inside the TankTrouble page

@@ -12,6 +12,22 @@ npm run reproducible          # two builds, every file compared by SHA-256
 Needs Node.js 20+ (the last two also need a local Chrome; set `CHROME_PATH` if it is not in a standard place).
 Dependencies are dev-only and pinned: `esbuild` (minifier) and `playwright-core` (drives your local Chrome).
 
+## The Skin Creator Starter Kit (a separate, optional download)
+
+The starter kit is built on its own and never changes the main release or its ZIP:
+
+```
+npm run starter-kit           # dist-starter-kit/TankTrouble-Skin-Creator-Starter-Kit-<version>/ and the ZIP
+npm run test:starter-kit      # the kit's tests: example skin geometry, templates, PSD round trip, converter, guide, privacy
+npm run check:starter-kit     # builds, then imports the kit into the REAL packaged extension in a fresh Chrome profile (needs npm run build first)
+```
+
+It holds `START-HERE.html`, `example-skin/` (31 pictures + `skin.json`), `templates/` (blank and guide PNGs at 1x/2x/4x, a 4x shape guide per picture, a layered PSD),
+`artist-tools/` (a PSD-to-skin and an atlas-to-skin helper for Node 20+, with an example atlas) and `about/`. The templates, the guide's size
+tables and its list of problems are generated from `extension/src/frames.js`, `skin-package.js` and `panel.js`, so they cannot drift from
+what the importer accepts. `starter-kit/example-art.mjs` is the example skin's artwork (SVG); `node starter-kit/make-example-skin.mjs`
+redraws `example-skin/` with a local Chrome and `make-example-atlas.mjs` repacks the example atlas. See `starter-kit/README.md`.
+
 ## What a release contains
 
 `build/release.config.json` is the allowlist: every file that may be in the release, and why. The build fails if a listed source

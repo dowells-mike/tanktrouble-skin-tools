@@ -4,6 +4,9 @@ A skin is a folder of PNG pictures plus an optional `skin.json`. Each picture re
 exactly like the game names it. Anything you leave out stays the game's own, so you can start small.
 The example skins in `skin-packs/` are complete examples to look at.
 
+New to this? The optional **Skin Creator Starter Kit** (a separate download on the Releases page) has blank templates with guides, a layered
+PSD, a complete importable example skin and an illustrated guide for Photoshop, GIMP, Krita and Procreate.
+
 ## 1. Sizes and orientation
 
 Draw every part **facing up**. "px" means the game's own drawing units at normal size.

@@ -1,0 +1,665 @@
+{
+ "frames": [
+  {
+   "filename": "base",
+   "frame": {
+    "x": 2,
+    "y": 2,
+    "w": 128,
+    "h": 160
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 128,
+    "h": 160
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 168
+   }
+  },
+  {
+   "filename": "tread",
+   "frame": {
+    "x": 622,
+    "y": 2,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade0",
+   "frame": {
+    "x": 2,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade1",
+   "frame": {
+    "x": 20,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade10",
+   "frame": {
+    "x": 182,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade11",
+   "frame": {
+    "x": 200,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade2",
+   "frame": {
+    "x": 38,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade3",
+   "frame": {
+    "x": 56,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade4",
+   "frame": {
+    "x": 74,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade5",
+   "frame": {
+    "x": 92,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade6",
+   "frame": {
+    "x": 110,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade7",
+   "frame": {
+    "x": 128,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade8",
+   "frame": {
+    "x": 146,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "treadShade9",
+   "frame": {
+    "x": 164,
+    "y": 164,
+    "w": 16,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 4,
+    "y": 4,
+    "w": 16,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 24,
+    "h": 160
+   }
+  },
+  {
+   "filename": "turret0",
+   "frame": {
+    "x": 132,
+    "y": 2,
+    "w": 96,
+    "h": 156
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 4,
+    "w": 96,
+    "h": 156
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret1",
+   "frame": {
+    "x": 394,
+    "y": 318,
+    "w": 96,
+    "h": 128
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 32,
+    "w": 96,
+    "h": 128
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret10",
+   "frame": {
+    "x": 296,
+    "y": 318,
+    "w": 96,
+    "h": 132
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 28,
+    "w": 96,
+    "h": 132
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret11",
+   "frame": {
+    "x": 492,
+    "y": 318,
+    "w": 96,
+    "h": 112
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 48,
+    "w": 96,
+    "h": 112
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret12",
+   "frame": {
+    "x": 328,
+    "y": 2,
+    "w": 96,
+    "h": 156
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 4,
+    "w": 96,
+    "h": 156
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret13",
+   "frame": {
+    "x": 130,
+    "y": 460,
+    "w": 96,
+    "h": 88
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 72,
+    "w": 96,
+    "h": 88
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret14",
+   "frame": {
+    "x": 2,
+    "y": 460,
+    "w": 126,
+    "h": 109
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 5,
+    "y": 52,
+    "w": 126,
+    "h": 109
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret15",
+   "frame": {
+    "x": 426,
+    "y": 2,
+    "w": 96,
+    "h": 156
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 4,
+    "w": 96,
+    "h": 156
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret16",
+   "frame": {
+    "x": 524,
+    "y": 2,
+    "w": 96,
+    "h": 156
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 4,
+    "w": 96,
+    "h": 156
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret2",
+   "frame": {
+    "x": 316,
+    "y": 164,
+    "w": 96,
+    "h": 148
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 12,
+    "w": 96,
+    "h": 148
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret3",
+   "frame": {
+    "x": 230,
+    "y": 2,
+    "w": 96,
+    "h": 156
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 4,
+    "w": 96,
+    "h": 156
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret4",
+   "frame": {
+    "x": 414,
+    "y": 164,
+    "w": 96,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 20,
+    "w": 96,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret5",
+   "frame": {
+    "x": 512,
+    "y": 164,
+    "w": 96,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 20,
+    "w": 96,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret6",
+   "frame": {
+    "x": 2,
+    "y": 318,
+    "w": 96,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 20,
+    "w": 96,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret7",
+   "frame": {
+    "x": 100,
+    "y": 318,
+    "w": 96,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 20,
+    "w": 96,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret8",
+   "frame": {
+    "x": 198,
+    "y": 318,
+    "w": 96,
+    "h": 140
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 20,
+    "w": 96,
+    "h": 140
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  },
+  {
+   "filename": "turret9",
+   "frame": {
+    "x": 218,
+    "y": 164,
+    "w": 96,
+    "h": 152
+   },
+   "rotated": false,
+   "trimmed": true,
+   "spriteSourceSize": {
+    "x": 20,
+    "y": 8,
+    "w": 96,
+    "h": 152
+   },
+   "sourceSize": {
+    "w": 136,
+    "h": 164
+   }
+  }
+ ],
+ "meta": {
+  "app": "pack-atlas (TankTrouble Skin Creator Starter Kit)",
+  "image": "classic-tank-atlas.png",
+  "format": "RGBA8888",
+  "size": {
+   "w": 640,
+   "h": 571
+  },
+  "scale": "1"
+ }
+}
