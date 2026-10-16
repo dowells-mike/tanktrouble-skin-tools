@@ -21,7 +21,10 @@
     "reproducible": "node build/reproducible.mjs",
     "starter-kit": "node starter-kit/build.mjs",
     "test:starter-kit": "node --test tests/starter-kit.test.mjs",
-    "check:starter-kit": "node starter-kit/build.mjs && node tests/starter-kit.check.mjs"
+    "check:starter-kit": "node starter-kit/build.mjs && node tests/starter-kit.check.mjs",
+    "skins": "node skins/build-packs.mjs",
+    "test:skins": "node --test tests/skins.test.mjs",
+    "check:skins": "node skins/build-packs.mjs && node tests/skins.check.mjs"
   },
   "engines": {
     "node": ">=20"

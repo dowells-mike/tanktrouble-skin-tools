@@ -1,0 +1,20 @@
+{
+  "comment": "The optional skin collection. Each entry becomes one player download (a ZIP with the importable skin folder and nothing else). Sources stay in this repository; the ZIPs carry only what a player needs.",
+  "version": "1.0.0",
+  "packs": [
+    {
+      "dir": "rainbow-paint",
+      "zipName": "TankTrouble-Skin-Rainbow-Paint-3D",
+      "title": "Rainbow Paint (3D)",
+      "blurb": "The game's rainbow paint on a rendered 3D tank: red at the top of every part, violet at the bottom.",
+      "credit": "Rendered from the \"TankTrouble in 3D\" Blender model by asger-finding (CC0 1.0), with the material, lighting, effect artwork and build tooling by Bleed."
+    },
+    {
+      "dir": "onyx-paint",
+      "zipName": "TankTrouble-Skin-Onyx-Paint-3D",
+      "title": "Onyx Paint (3D)",
+      "blurb": "Polished black onyx with thin grey-gold veins, glossy highlights and soft moving tread bands.",
+      "credit": "Rendered from the \"TankTrouble in 3D\" Blender model by asger-finding (CC0 1.0), with the onyx material, lighting, effect artwork and build tooling by Bleed."
+    }
+  ]
+}

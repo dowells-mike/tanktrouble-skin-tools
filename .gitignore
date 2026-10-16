@@ -11,3 +11,5 @@ starter-kit/src/artist-tools/lib/resample.js
 starter-kit/src/artist-tools/lib/png-info.js
 starter-kit/src/artist-tools/lib/skin-package.js
 dist-starter-kit/
+skins/reference/
+dist-skins/

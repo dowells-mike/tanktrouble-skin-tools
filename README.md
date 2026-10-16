@@ -41,6 +41,23 @@ The ZIP also contains **`START-HERE.html`**, a picture-by-picture guide with tro
   <img src="screenshots/manage-skins.png" width="250" alt="The Manage skins page with three skins installed">
 </p>
 
+## Optional skins: the Skin collection
+
+Fully rendered 3D skins are separate, small downloads (about 200 KB each) so the add-on itself stays light. No Blender, Node.js or Photoshop is needed: unzip, then
+**Manage skins → Add a folder**.
+
+| Skin | Download (on the [Releases page](../../releases)) |
+|---|---|
+| **Rainbow Paint (3D)**: the game's rainbow paint on a 3D tank | `TankTrouble-Skin-Rainbow-Paint-3D-1.0.0.zip` |
+| **Onyx Paint (3D)**: polished black onyx with grey-gold veins | `TankTrouble-Skin-Onyx-Paint-3D-1.0.0.zip` |
+
+<p align="center">
+  <img src="skins/rainbow-paint/screenshots/game-weapon-frames.png" width="440" alt="Rainbow Paint (3D), six weapon frames in the game's renderer">
+  <img src="skins/onyx-paint/screenshots/game-weapon-frames.png" width="440" alt="Onyx Paint (3D), six weapon frames in the game's renderer">
+</p>
+
+The shield, bullets and crates stay the game's own. Details, previews, editable sources and how to rebuild: [skins/README.md](skins/README.md).
+
 ## Download and install
 
 1. Go to the [Releases page](../../releases/latest) and download **`TankTrouble-Skin-Tools-1.0.0.zip`** (about 800 KB). Ignore the
