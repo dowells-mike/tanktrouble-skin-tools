@@ -70,8 +70,9 @@ test('no custom shield: neither the skins nor their sources ship or build shield
   for (const dir of fs.readdirSync(buildA).filter(n => n.endsWith('.zip'))) assert.deepEqual(readZip(fs.readFileSync(path.join(buildA, dir))).filter(e => /shield/i.test(e.path)), []);
 });
 
-test('the Onyx tread-shade frames are the soft, faint bands: 12 of them, never a hard dark block', () => {
-  const dir = path.join(skinsDir, 'onyx-paint', 'skin');
+test('the Onyx and Backer tread-shade frames are the soft, faint bands: 12 of them, never a hard dark block', () => {
+  for (const skin of ['onyx-paint', 'backer-paint']) {
+  const dir = path.join(skinsDir, skin, 'skin');
   let first = null;
   for (let k = 0; k < 12; k++) {
     const p = decodePng(fs.readFileSync(path.join(dir, `treadShade${k}.png`)));
@@ -83,6 +84,7 @@ test('the Onyx tread-shade frames are the soft, faint bands: 12 of them, never a
     assert.ok(nonzero > p.width * 40, 'bands are present');
     if (k === 0) first = p.data;
     else assert.notDeepEqual(Buffer.from(p.data), Buffer.from(first), `frame ${k} moves`);
+  }
   }
 });
 
@@ -144,4 +146,25 @@ test('the collection README and the main README name every skin and point to rea
   for (const m of gallery.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)) assert.ok(fs.existsSync(path.join(skinsDir, m[1])), `image ${m[1]}`);
   const main = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
   for (const pack of config.packs) assert.ok(main.includes(pack.title), `${pack.title} in README.md`);
+});
+
+test('Backer Paint is one physical tank: the camouflage on the dome is the same in every weapon frame, and the barrels carry their own pattern', () => {
+  const dir = path.join(skinsDir, 'backer-paint', 'skin');
+  const frame = n => decodePng(fs.readFileSync(path.join(dir, `turret${n}.png`)));
+  const region = (img, x0, y0, x1, y1) => { const out = []; for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) { const i = (y * img.width + x) * 4; out.push(img.data[i], img.data[i + 1], img.data[i + 2]); } return out; };
+  const meanDiff = (a, b) => a.reduce((s, v, i) => s + Math.abs(v - b[i]), 0) / a.length;
+  // the lower half of the dome (4x pixels around the dome centre (136, 228)): no barrel, recoil or muzzle ever covers it
+  const dome = n => region(frame(n), 96, 250, 176, 305);
+  const base = dome(0);
+  for (const n of [1, 4, 9, 12, 13, 15]) assert.ok(meanDiff(base, dome(n)) < 4, `turret${n}: the dome's camouflage matches turret0 (mean difference ${meanDiff(base, dome(n)).toFixed(2)}/255)`);
+  // and the patches are there: all three greens are present on the dome (bright, medium, dark), so it is camouflage, not a flat colour
+  const greens = new Set(); for (let i = 0; i < base.length; i += 3) greens.add(base[i + 1] > 190 ? 'bright' : base[i + 1] > 135 ? 'medium' : 'dark');
+  assert.deepEqual([...greens].sort(), ['bright', 'dark', 'medium']);
+  // everything is green: green is the strongest channel of every opaque pixel of the tank
+  for (const name of ['base', 'tread', 'turret0', 'turret9']) {
+    const img = decodePng(fs.readFileSync(path.join(dir, `${name}.png`)));
+    let opaque = 0, notGreen = 0;
+    for (let i = 0; i < img.data.length; i += 4) if (img.data[i + 3] > 250) { opaque++; if (!(img.data[i + 1] >= img.data[i] && img.data[i + 1] >= img.data[i + 2])) notGreen++; }
+    assert.ok(opaque > 1000 && notGreen / opaque < 0.01, `${name}: ${notGreen}/${opaque} opaque pixels are not green`);
+  }
 });

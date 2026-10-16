@@ -15,6 +15,13 @@
       "title": "Onyx Paint (3D)",
       "blurb": "Polished black onyx with thin grey-gold veins, glossy highlights and soft moving tread bands.",
       "credit": "Rendered from the \"TankTrouble in 3D\" Blender model by asger-finding (CC0 1.0), with the onyx material, lighting, effect artwork and build tooling by Bleed."
+    },
+    {
+      "dir": "backer-paint",
+      "zipName": "TankTrouble-Skin-Backer-Paint-3D",
+      "title": "Backer Paint (3D)",
+      "blurb": "The game's green Backer camouflage as a rendered 3D tank: emerald and forest-green patches that wrap over the dome and barrel, with soft moving tread bands.",
+      "credit": "Rendered from the \"TankTrouble in 3D\" Blender model by asger-finding (CC0 1.0), with the camouflage material, lighting, effect artwork and build tooling by Bleed."
     }
   ]
 }
