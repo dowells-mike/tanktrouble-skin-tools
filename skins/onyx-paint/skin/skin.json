@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "onyx-paint-3d",
+  "name": "Onyx Paint (3D)",
+  "author": "Skin Tools example (tank model: asger-finding, CC0)",
+  "version": "1.0.0",
+  "tint": {
+    "base": "none",
+    "tread": "none",
+    "turret": "none"
+  },
+  "pixelScale": 4,
+  "laser": {
+    "colour": "#e3d58a",
+    "glow": true
+  }
+}

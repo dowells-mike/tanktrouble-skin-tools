@@ -14,7 +14,7 @@ import { findIdentifiers } from '../starter-kit/privacy.mjs';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(here, '..');
 
-const TEXT = /\.(js|json|html|txt|md|css|svg|mjs|cjs)$/i;
+const TEXT = /\.(js|json|html|txt|md|css|svg|mjs|cjs|py)$/i;
 const GENERIC = [
   ['a Windows user folder path', /[A-Za-z]:[\\/]+(Users|Documents and Settings)[\\/]+/i],
   ['a home folder path', /\/(home|Users)\/[A-Za-z0-9._-]+\//],
@@ -114,6 +114,24 @@ export function auditKitZip(zipFile) {
   return findings;
 }
 
+/** Audits a skin pack ZIP (skins/build-packs.mjs): only the skin folder's PNGs and skin.json plus three notes, no metadata, no real-world identifiers. */
+export function auditSkinPackZip(zipFile) {
+  const findings = [];
+  const name = path.basename(zipFile);
+  const bytes = fs.readFileSync(zipFile);
+  findings.push(...findIdentifiers(`${name} (archive headers)`, bytes));
+  for (const e of readZip(bytes)) {
+    const where = `${name}:${e.path}`;
+    findings.push(...findIdentifiers(`${where} (name)`, e.path, { text: true }));
+    findings.push(...findIdentifiers(where, e.data, { text: !/\.png$/i.test(e.path) }));
+    if (e.extra) findings.push(`${where}: carries extra ZIP metadata`);
+    if (!/^[A-Za-z0-9-]+\/(skin\.json|[A-Za-z0-9]+\.png)$|^(INSTALL|CREDITS|LICENSE)\.txt$/.test(e.path)) findings.push(`${where}: not a file a player skin pack may contain`);
+    if (/\.(psd|blend1?|py|mjs|js|svg)$/i.test(e.path)) findings.push(`${where}: a source or tool file in a player download`);
+    findings.push(...auditFile(where, e.data));
+  }
+  return findings;
+}
+
 /** Audits every file git tracks in this project (what a public repository would show). */
 export function auditRepository(root = projectRoot) {
   const files = execFileSync('git', ['ls-files', '-z'], { cwd: root }).toString().split('\0').filter(Boolean);
@@ -124,6 +142,9 @@ export function auditRepository(root = projectRoot) {
     const data = fs.readFileSync(path.join(root, rel));
     // the starter kit carries only the TankTrouble username: no real-world identifier may appear in its sources, its tests or its pictures
     if (/^(starter-kit\/|tests\/starter-kit\.)/.test(rel)) findings.push(...findIdentifiers(rel, data, { text: !/\.(png|psd)$/i.test(rel) }));
+    // the skin sources (skins/) carry only the TankTrouble username too; their layered PSDs are binary, so only the identifier scan applies to them
+    if (/^skins\//.test(rel)) findings.push(...findIdentifiers(rel, data, { text: !/\.(png|psd)$/i.test(rel) }));
+    if (/^skins\/.*\.psd$/i.test(rel)) continue;
     if (/\.(png)$/i.test(rel)) { findings.push(...auditFile(rel, data)); continue; }
     const plain = /(^|\/)(LICENSE|\.gitignore|\.gitattributes)$/.test(rel);
     if (!TEXT.test(rel) && !plain) { findings.push(`${rel}: unexpected file type in the repository`); continue; }
@@ -142,6 +163,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const kitDist = path.join(projectRoot, 'dist-starter-kit');
   const kitZips = fs.existsSync(kitDist) ? fs.readdirSync(kitDist).filter(n => n.endsWith('.zip')) : [];
   for (const z of kitZips) findings.push(...auditKitZip(path.join(kitDist, z)));
+  const skinDist = path.join(projectRoot, 'dist-skins');
+  const skinZips = fs.existsSync(skinDist) ? fs.readdirSync(skinDist).filter(n => n.endsWith('.zip')) : [];
+  for (const z of skinZips) findings.push(...auditSkinPackZip(path.join(skinDist, z)));
   let repo = [];
   try { repo = auditRepository(); } catch (e) {
     // inside a git checkout an audit that cannot finish is a failure, never a silent skip
